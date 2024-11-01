@@ -26,10 +26,20 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        compose = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1"
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -45,4 +55,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // compose
+    implementation("androidx.compose:compose-bom:2024.10.01")
+    implementation("androidx.activity:activity-compose")
+    implementation("androidx.compose.material3:material3:1.3.1")
 }
