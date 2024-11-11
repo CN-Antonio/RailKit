@@ -4,18 +4,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.unit.*
+import androidx.compose.material3.*
+import androidx.navigation.compose.rememberNavController
+import com.example.railkit.components.App_Grid
 
 
 @Composable
-fun MainPage(string: String) {
+fun MainPage(
+    string: String
+) {
+    val navController = rememberNavController()
+
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFF5F5F5))  // Light gray background
+            .background(Color(0xFFF5F5F5))
     ) {
         Column (
             modifier = Modifier
@@ -25,8 +31,7 @@ fun MainPage(string: String) {
         ){
             Card( // 查询车票
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0xFFFFFFFF)),
+                    .fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp)
             ) {
                 Text(
@@ -40,12 +45,7 @@ fun MainPage(string: String) {
                     .padding(top = 10.dp),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                // Functions: n×5 layout
-                // max 3×5 with page scroll
-                Text(
-                    text = "Functions",
-                    modifier = Modifier.padding(16.dp)
-                )
+                App_Grid()
             }
             Card( // News
                 modifier = Modifier
@@ -61,4 +61,3 @@ fun MainPage(string: String) {
         }
     }
 }
-//定位，显示最近车站，点击跳转车站相关选项
