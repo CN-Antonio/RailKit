@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
 //import androidx.core.view.ViewCompat
 //import androidx.core.view.WindowInsetsCompat
 
-import com.example.railkit.pages.MainPage
 import com.example.railkit.components.BottomNavigationBar
 
 class MainActivity : ComponentActivity() {
