@@ -8,16 +8,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.unit.*
 import androidx.compose.material3.*
-import androidx.navigation.compose.rememberNavController
+import com.example.railkit.components.TopBar
 import com.example.railkit.components.App_Grid
+import com.example.railkit.components.SearchTicket
 
 
 @Composable
 fun MainPage(
-    string: String
+    string: String,
+    modifier: Modifier
 ) {
-    val navController = rememberNavController()
-
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -27,17 +27,19 @@ fun MainPage(
             modifier = Modifier
                 .fillMaxWidth()
                 .statusBarsPadding()
-                .padding(horizontal = 8.dp)
         ){
+            TopBar("RailKit")
             Card( // 查询车票
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp), // 正确
                 shape = RoundedCornerShape(12.dp)
             ) {
                 Text(
-                    text = "Train Search",
+                    text = string, //"Train Search",
                     modifier = Modifier.padding(16.dp)
                 )
+                SearchTicket()
             }
             Card( // Services
                 modifier = Modifier

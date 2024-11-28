@@ -61,4 +61,15 @@ dependencies {
     implementation("androidx.compose:compose-bom:2024.10.01")
     implementation("androidx.activity:activity-compose")
     implementation("androidx.compose.material3:material3:1.3.1")
+
+    // Lifecycle
+    val lifecycleVersion = "2.6.2"
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+
+//    // Hilt
+//    implementation("com.google.dagger:hilt-android:2.48.1")
+//    kapt("com.google.dagger:hilt-android-compiler:2.48.1")
 }
